@@ -1,1 +1,1 @@
-web: npm run server|npm run client
+web: node client/build/dev-server.j | node server/app.js
