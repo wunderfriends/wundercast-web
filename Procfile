@@ -1,1 +1,2 @@
-web: node client/build/dev-server.js | node server/app.js
+client: node client/build/dev-server.js
+server: node server/app.js
