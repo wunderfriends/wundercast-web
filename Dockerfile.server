@@ -1,0 +1,15 @@
+FROM node:argon
+
+RUN mkdir /src
+
+RUN npm update -g
+RUN npm install
+
+WORKDIR /src
+
+RUN npm install -g nodemon
+RUN npm install node-sass
+
+EXPOSE 3001
+
+CMD npm run server

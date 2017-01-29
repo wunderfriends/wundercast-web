@@ -1,0 +1,28 @@
+client:
+  build: .
+  dockerfile: Dockerfile.client
+  environment:
+    - NODE_ENV=development
+  volumes:
+    - .:/src
+  ports:
+    - "8081:8081"
+  links:
+    - server
+
+server:
+  build: .
+  dockerfile: Dockerfile.server
+  environment:
+    - NODE_ENV=development
+  volumes:
+    - .:/src
+  ports:
+    - "8080:8080"
+  links:
+    - mongo
+
+mongo:
+   image: mongo
+   ports:
+     - "27017:27017"
