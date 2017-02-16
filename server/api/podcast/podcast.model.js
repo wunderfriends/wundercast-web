@@ -1,20 +1,12 @@
-var mongoose = require('mongoose');
+'use strict'
 
-module.exports = function() {
-    var schema = mongoose.Schema({
-        titulo: {
-            type: String,
-            required: true
-        },
-        descricao: {
-            type: String,
-            required: true
-        },
-        dataInclusao: {
-            type: Date,
-            required: true
-        }
-    });
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema
 
-    return mongoose.model('Podcast', schema);
-}
+var PodcastSchema = new Schema({
+  titulo: String,
+  descricao: String,
+  dataInclusao: Date
+})
+
+module.exports = mongoose.model('Podcast', PodcastSchema)
